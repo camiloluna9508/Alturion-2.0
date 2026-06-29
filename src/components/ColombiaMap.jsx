@@ -6,10 +6,11 @@ import { departmentProjects } from '../data/departmentProjects';
 
 const COLORS = {
   default: '#112248',
-  hasData: '#0F2035',
-  hover: '#1e3a6e',
-  selected: '#2a4a80',
-  stroke: 'rgba(201,168,76,0.25)',
+  hasData: 'rgba(201,168,76,0.25)',
+  hover: 'rgba(201,168,76,0.35)',
+  selected: 'rgba(201,168,76,0.45)',
+  stroke: 'rgba(255,255,255,0.08)',
+  strokeHasData: 'rgba(201,168,76,0.4)',
   strokeHover: '#C9A84C',
   strokeSelected: '#C9A84C',
 };
@@ -51,11 +52,13 @@ export default function ColombiaMap({ onSelect, selectedDept }) {
       .attr('stroke', (d) => {
         const name = d.properties.DPTO_CNMBR;
         if (name === selectedDept) return COLORS.strokeSelected;
-        return COLORS.stroke;
+        return departmentProjects[name] ? COLORS.strokeHasData : COLORS.stroke;
       })
-      .attr('stroke-width', (d) =>
-        d.properties.DPTO_CNMBR === selectedDept ? 1.5 : 0.8
-      )
+      .attr('stroke-width', (d) => {
+        const name = d.properties.DPTO_CNMBR;
+        if (name === selectedDept) return 1.5;
+        return departmentProjects[name] ? 1 : 0.5;
+      })
       .style('cursor', (d) =>
         departmentProjects[d.properties.DPTO_CNMBR] ? 'pointer' : 'default'
       )
@@ -83,8 +86,8 @@ export default function ColombiaMap({ onSelect, selectedDept }) {
           .transition()
           .duration(150)
           .attr('fill', departmentProjects[name] ? COLORS.hasData : COLORS.default)
-          .attr('stroke', COLORS.stroke)
-          .attr('stroke-width', 0.8);
+          .attr('stroke', departmentProjects[name] ? COLORS.strokeHasData : COLORS.stroke)
+          .attr('stroke-width', departmentProjects[name] ? 1 : 0.5);
         setTooltip(null);
       })
       .on('click', function (event, d) {

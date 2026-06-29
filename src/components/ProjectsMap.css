@@ -100,8 +100,8 @@
 }
 
 .projects-map__legend-dot--active {
-  background: #0F2035;
-  border: 1px solid rgba(201, 168, 76, 0.4);
+  background: rgba(201, 168, 76, 0.25);
+  border: 1px solid rgba(201, 168, 76, 0.5);
 }
 
 .projects-map__legend-dot--inactive {

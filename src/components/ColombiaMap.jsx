@@ -21,7 +21,7 @@ export default function ColombiaMap({ onSelect, selectedDept }) {
   const [geoData, setGeoData] = useState(null);
 
   useEffect(() => {
-    fetch('/colombia.geo.json')
+    fetch(import.meta.env.BASE_URL + 'colombia.geo.json')
       .then((r) => r.json())
       .then(setGeoData);
   }, []);

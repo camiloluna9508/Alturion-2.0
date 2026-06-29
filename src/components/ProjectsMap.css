@@ -1,0 +1,343 @@
+.projects-map {
+  background: var(--bg-primary);
+  padding: 100px 24px;
+}
+
+.projects-map__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects-map__eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.projects-map__title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 42px);
+  text-transform: uppercase;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.projects-map__desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin-bottom: 48px;
+}
+
+.projects-map__layout {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+}
+
+.projects-map__map-wrap {
+  flex: 1;
+  min-width: 0;
+}
+
+.colombia-map__container {
+  position: relative;
+  width: 100%;
+  height: 520px;
+}
+
+.colombia-map__tooltip {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(10, 22, 40, 0.92);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 8px;
+  padding: 10px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.colombia-map__tooltip strong {
+  font-family: var(--font-display);
+  font-size: 14px;
+  color: #fff;
+}
+
+.colombia-map__tooltip span {
+  font-size: 11px;
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.projects-map__legend {
+  display: flex;
+  gap: 24px;
+  margin-top: 16px;
+}
+
+.projects-map__legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.projects-map__legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.projects-map__legend-dot--active {
+  background: #0F2035;
+  border: 1px solid rgba(201, 168, 76, 0.4);
+}
+
+.projects-map__legend-dot--inactive {
+  background: #112248;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Project Panel styles */
+.project-panel {
+  width: 320px;
+  background: var(--bg-panel);
+  border: 1px solid rgba(201, 168, 76, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.project-panel__header {
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.project-panel__name {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.project-panel__count {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 4px;
+}
+
+.project-panel__close {
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.06);
+  border: none;
+  border-radius: 50%;
+  color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.project-panel__close:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.project-panel__list {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 440px;
+  overflow-y: auto;
+}
+
+.project-panel__card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.project-panel__card-img {
+  position: relative;
+  height: 120px;
+  background: linear-gradient(135deg, #112248, #1a3060);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-panel__card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.project-panel__placeholder {
+  font-size: 32px;
+  color: rgba(201, 168, 76, 0.25);
+}
+
+.project-panel__year {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(10, 22, 40, 0.85);
+  border: 1px solid rgba(201, 168, 76, 0.4);
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold);
+  padding: 3px 8px;
+  letter-spacing: 1px;
+}
+
+.project-panel__card-body {
+  padding: 12px 14px;
+}
+
+.project-panel__category {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.project-panel__card-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 6px;
+  line-height: 1.3;
+}
+
+.project-panel__metrics {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* National project card */
+.projects-map__national {
+  margin-top: 40px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 168, 76, 0.15);
+  border-radius: 12px;
+  padding: 24px 28px;
+  position: relative;
+}
+
+.projects-map__national-badge {
+  position: absolute;
+  top: -10px;
+  left: 24px;
+  background: var(--bg-primary);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  border-radius: 4px;
+  padding: 2px 12px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--gold);
+}
+
+.projects-map__national-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+.projects-map__national-title {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.projects-map__national-metrics {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.projects-map__national-note {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.projects-map__national-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.projects-map__national-year {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.projects-map__national-cat {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .projects-map__layout {
+    flex-direction: column;
+  }
+
+  .project-panel {
+    width: 100%;
+  }
+
+  .colombia-map__container {
+    height: 400px;
+  }
+
+  .projects-map__legend {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .projects-map__national-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .projects-map__national-meta {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+}
